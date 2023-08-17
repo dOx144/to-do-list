@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 100px;
+}
+
+.main-container {
+  outline: 1px solid black;
+  padding: 50px;
+  width: 400px;
+}
+
+.button-functions {
+  display: flex;
+}
+
+#input-bar {
+  width: 100%;
+  padding: 5px;
+}
+
+#input-bar:focus {
+  outline: none;
+}
+
+input[type="button"] {
+  width: 50%;
+  padding: 5px;
+  font-size: .9rem;
+}
+
+.todo-task-container {
+  padding: 5px;
+  background-color: rgba(216, 216, 216, 0.39);
+  counter-increment: task-numbering;
+  margin-bottom: 5px;
+  position: relative;
+  transition: .3s;
+}
+
+.todo-task-container::before {
+  content: counter(task-numbering) ") ";
+  padding-right: 5px;
+}
+
+.todo-task-container:active {
+  scale: .9;
+}
+
+.todo-task-container:hover {
+  background-color: rgb(156, 156, 156);
+  color: white;
+}
+
+.todo-task-container span {
+  content: '';
+  position: absolute;
+  height: 5px;
+  aspect-ratio: 4;
+  border-radius: 2px;
+  background-color: rgb(133, 133, 133);
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .3s;
+}
+
+.todo-task-container span:active {
+  scale: .9;
+}
+
+.todo-task-container:hover span {
+  background-color: rgb(236, 236, 236);
+}

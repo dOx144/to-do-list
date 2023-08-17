@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Poppins&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Noto Sans', sans-serif; */
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding-top: 50px;
+}
+
+.todo-input-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 500px;
+  padding: 10px;
+  outline: 1px solid black;
+}
+
+.todo-input-popup textarea {
+  padding: 10px;
+  font-size: 1rem;
+  resize: none !important;
+}
+
+.todo-input-popup textarea::-webkit-scrollbar {
+  width: 0;
+}
+
+.todo-input-popup textarea::placeholder {
+  text-align: center;
+}
+
+.todo-input-popup textarea:nth-child(1) {
+  height: 50px;
+  max-height: 100px;
+}
+
+.todo-input-popup textarea:nth-child(2) {
+  min-height: 150px;
+}
+
+.todo-input-popup button {
+  height: 50px;
+  font-size: 1.25rem;
+  position: relative;
+  border: none;
+  background-color: white;
+  outline: 1px solid black;
+  transition: .2s;
+}
+
+.todo-input-popup button:active {
+  scale: 98%;
+  background-color: #4e4e4e;
+  color: #d4d4d4;
+}
+
+.todo-input-popup button:active .plus-sign::before {
+  background-color: #d4d4d4;
+}
+
+.todo-input-popup button:active .plus-sign::after {
+  background-color: #d4d4d4;
+}
+
+.plus-sign {
+  width: 22px;
+  height: 22px;
+  /* outline: 1px solid red; */
+  position: absolute;
+  top: 13px;
+  right: 145px;
+}
+
+.plus-sign::before,
+.plus-sign::after {
+  position: absolute;
+  content: '';
+  width: 22px;
+  height: 4px;
+  background-color: #4e4e4e;
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.plus-sign::before {
+  transform: rotate(90deg) translate(-10%, 0);
+}
+
+@media (max-width: 600px) {
+  .todo-input-popup {
+    width: 300px;
+  }
+
+  .todo-input-popup textarea {
+    font-size: 14px;
+  }
+
+  .todo-input-popup button {
+    font-size: 1rem;
+  }
+
+  .plus-sign {
+    right: 60px;
+    scale: .8;
+  }
+}
+
+.task {
+  outline: 1px solid red;
+  padding: 10px;
+  margin: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.task::before {
+  position: absolute;
+  content: '';
+  left: -20px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #4e4e4e;
+}
+
+.task h2 {
+  font-size: 1.25rem;
+  background-color: #4e4e4e;
+  color: white;
+}
+
+.remove {
+  position: absolute;
+  width: 22px;
+  height: 5px;
+  background-color: #4e4e4e;
+  top: 10px;
+  right: 0;
+  transform: translateX(150%);
+}
+
+.remove:active {
+  scale: .9;
+  background-color: red;
+}

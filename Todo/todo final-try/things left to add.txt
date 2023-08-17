@@ -1,0 +1,8 @@
+-close button on the top of list container 
+-fix second element(p) on hover 
+-add animation
+-maybe make it look professional ( Better UI )
+- might need to change fonts 
+
+
+anything left please recommendation is appretiated :)

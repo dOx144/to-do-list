@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 100px;
+      background-color: rgb(209, 209, 209);
+    }
+
+    .main-container {
+      outline: 1px solid black;
+      padding: 50px;
+      width: 400px;
+      background-color: white;
+    }
+
+    .button-functions {
+      display: flex;
+    }
+
+    #input-bar {
+      width: 100%;
+      padding: 5px;
+    }
+
+    #input-bar:focus {
+      outline: none;
+    }
+
+    input[type="button"] {
+      width: 50%;
+      padding: 5px;
+      font-size: 0.9rem;
+    }
+
+    .todo-task-container {
+      padding: 5px;
+      background-color: rgba(216, 216, 216, 0.39);
+      counter-increment: task-numbering;
+      margin-bottom: 5px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .todo-task-container::before {
+      content: counter(task-numbering) ") ";
+      padding-right: 5px;
+    }
+
+    .todo-task-container:hover {
+      background-color: rgb(156, 156, 156);
+      color: white;
+    }
+
+    .todo-task-container span {
+      content: "";
+      position: absolute;
+      height: 5px;
+      aspect-ratio: 4;
+      border-radius: 2px;
+      background-color: rgb(248, 79, 79);
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+
+    .todo-task-container:hover span {
+      background-color: rgb(245, 33, 33);
+    }
+  </style>
+  <body>
+    <div class="main-container">
+      <h3>To-do List</h3>
+      <div class="to-do-content">
+        <form action="content">
+          <div class="input-bar">
+            <input
+              type="text"
+              class="input"
+              id="input-bar"
+              placeholder="Enter the to-do's"
+            />
+          </div>
+          <div class="button-functions">
+            <input type="button" class="add" id="add-button" value="Add" />
+            <input
+              type="button"
+              class="remove"
+              id="remove-button"
+              value="Remove All"
+            />
+          </div>
+        </form>
+        <div class="container" id="container">
+          <!-- <div class="todo-task-container">
+            task 1
+            <span class="remove"></span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
