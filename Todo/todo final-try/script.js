@@ -6,6 +6,7 @@ const addNoteToggle = document.getElementById("add-note");
 const popup = document.querySelector(".todo-input-popup ");
 
 addNoteToggle.addEventListener("click", () => {
+  container.classList.add("active");
   popup.classList.add("active");
   addNoteToggle.classList.add("active");
 });
@@ -32,6 +33,11 @@ createNote.addEventListener("click", () => {
     newTaskDiv.appendChild(newTaskNote);
     container.appendChild(newTaskDiv);
 
+    newTaskDiv.addEventListener("dblclick", () => {
+      newTaskTitle.classList.toggle("active");
+      newTaskNote.classList.toggle("active");
+    });
+
     newTaskDiv.addEventListener("click", (e) => {
       console.log(e.target);
       if (e.target.classList.contains("remove")) {
@@ -55,4 +61,5 @@ createNote.addEventListener("click", () => {
     rename();
   }
   addNoteToggle.classList.remove("active");
+  container.classList.remove("active");
 });
